@@ -9,8 +9,8 @@ dev_experience = st.number_input("Experience(Year)",min_value=0, max_value=50)
 
 if st.button("Create Developer"):
     dev_data = {"name": dev_name,"experience":dev_experience}
-    response = requests.post("http://localhost:8501//developer/",json=dev_data)
-    st.json(response.json())
+    response = requests.post("http://127.0.0.1:8000/developers/",json=dev_data)
+    st.json({"json":response.json()})
 
 st.header("Add a Project")
 proj_title = st.text_input("Project Title")
